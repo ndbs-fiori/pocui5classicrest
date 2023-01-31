@@ -1,0 +1,108 @@
+<mvc:View controllerName="demo.pocui5classicrest.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:ndc="sap.ndc">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <HBox class="sapUiSmallMargin">
+                <Input id="sgvalue" placeholder="SingleValue" value="SingleValue"/>
+                <ndc:BarcodeScannerButton
+                    id="bcscanner"
+                    scanSuccess="onScanSuccess"
+                    dialogTitle="Barcode Scanner" />
+            </HBox>
+            <VBox class="sapUiSmallMargin">
+                <f:Form id="FormChange123">
+                    <f:layout>
+                        <f:ResponsiveGridLayout
+                                columnsM="2"
+                                columnsL="3"
+                                columnsXL="4" />
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer>
+                            <f:formElements>
+                                    <f:FormElement label="Barcode Count">
+                                        <f:fields>
+                                            <Text id="bcCount"/>
+                                        </f:fields>
+                                    </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+            </VBox>
+            <VBox class="sapUiSmallMargin">
+                <f:Form id="FormChange354"
+                    editable="true">
+                    <f:title>
+                        <core:Title text="Stucture" />
+                    </f:title>
+                    <f:layout>
+                        <f:ResponsiveGridLayout
+                                columnsM="2"
+                                columnsL="3"
+                                columnsXL="4" />
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer>
+                            <f:formElements>
+                                    <f:FormElement label="StuctureValue01">
+                                        <f:fields>
+                                            <Input id="stvalue01" value="StructureValue01"/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="StuctureValue02">
+                                        <f:fields>
+                                            <Input id="stvalue02" value="StructureValue02"/>
+                                        </f:fields>
+                                    </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+            </VBox>
+            <Table id="table"
+            delete="onDelete" >
+                <columns>
+                    <Column>
+                        <Text text="TableValue01" />
+                    </Column>
+                    <Column>
+                        <Text text="TableValue02" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Input value="TableValue 11"/>
+                            <Input value="TableValue 12"/>
+                        </cells>
+                    </ColumnListItem>
+                    <ColumnListItem>
+                        <cells>
+                            <Input value="TableValue 21"/>
+                            <Input value="TableValue 22"/>
+                        </cells>
+                    </ColumnListItem>
+                    <ColumnListItem>
+                        <cells>
+                            <Input value="TableValue 31"/>
+                            <Input value="TableValue 32"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <Button text="Add Item" press="onAddItem"/>
+                <Button text="Enable Delete Mode" press="onToggleDelete"/>
+                <ToolbarSpacer/>
+                <Button text="Post" press="onPost" />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
