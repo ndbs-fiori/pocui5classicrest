@@ -36,13 +36,13 @@ sap.ui.define([
                     });
     
                 });
-
+                
                 this._ajaxPost("/sap/bc/zpocui5test02/ZFM_POC_UI5", oJSONData,
                 function(oData){
-                    MessageBox.success(JSON.stringify(oData));
+                    MessageBox.success(JSON.stringify(oData,null,"\t"));
                 },
                 function(oData){
-                    MessageBox.error(JSON.stringify(oData));
+                    MessageBox.error(JSON.stringify(oData,null,"\t"));
                 });
 
             },
@@ -123,7 +123,7 @@ sap.ui.define([
                         MessageBox.success(oData.ev_message);
                     }.bind(this),
                     function(oData){
-                        MessageBox.error(JSON.stringify(oData));
+                        MessageBox.error(JSON.stringify(oData,null,"\t"));
                     }.bind(this));
 
                 }
