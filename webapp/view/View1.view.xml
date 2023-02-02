@@ -68,10 +68,10 @@
             delete="onDelete" >
                 <columns>
                     <Column>
-                        <Text text="TableValue01" />
+                        <Text text="TableColumn01" />
                     </Column>
                     <Column>
-                        <Text text="TableValue02" />
+                        <Text text="TableColumn02" />
                     </Column>
                 </columns>
                 <items>
