@@ -22,7 +22,7 @@
         "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#demopocui5classicrest-display\"",
         "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#demopocui5classicrest-display\"",
         "build": "rimraf resources mta_archives && mbt build --mtar archive",
-        "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+        "deploy": "fiori cfDeploy",
         "deploy-config": "fiori add deploy-config",
         "start-noflp": "fiori run --open \"index.html?sap-ui-xx-viewCache=false\"",
         "start-variants-management": "fiori run --open \"preview.html?sap-ui-xx-viewCache=false&fiori-tools-rta-mode=true&sap-ui-rta-skip-flex-validation=true#preview-app\"",

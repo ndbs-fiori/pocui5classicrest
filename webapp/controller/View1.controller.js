@@ -11,7 +11,9 @@ sap.ui.define([
 
         return Controller.extend("demo.pocui5classicrest.controller.View1", {
             onInit: function () {
-
+                // window.addEventListener('touchstart', function(event) {
+                //     event.preventDefault();
+                // });
             },
             onPost: function(){
 
