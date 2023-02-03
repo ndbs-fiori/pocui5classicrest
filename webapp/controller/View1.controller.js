@@ -10,11 +10,40 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("demo.pocui5classicrest.controller.View1", {
+
             onInit: function () {
-                // window.addEventListener('touchstart', function(event) {
-                //     event.preventDefault();
-                // });
+                // this.getUserInfo();
             },
+
+            onUserInfo: function(){
+                this.getUserInfo();
+            },
+
+            getUserInfo: function () {
+                const url = this.getBaseURL() + "/user-api/currentUser";
+                var oModel = new sap.ui.model.json.JSONModel();
+    
+                oModel.loadData(url);
+
+                oModel.dataLoaded()
+                .then(()=>{
+                    var oData = oModel.getData();
+                    if(!Object.keys(oData).length) return;
+                    MessageBox.success(JSON.stringify(oData,null,"\t"));
+                })
+                .catch(()=>{             
+                    // MessageBox.error(JSON.stringify(oData,null,"\t"));
+                });
+
+            },      
+            
+            getBaseURL: function () {
+                var appId = this.getOwnerComponent().getManifestEntry("/sap.app/id");
+                var appPath = appId.replaceAll(".", "/");
+                var appModulePath = jQuery.sap.getModulePath(appPath);
+                return appModulePath;
+            },
+
             onPost: function(){
 
                 var oJSONData = {

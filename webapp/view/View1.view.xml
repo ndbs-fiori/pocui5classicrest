@@ -5,6 +5,12 @@
     xmlns:f="sap.ui.layout.form"
     xmlns:ndc="sap.ndc">
     <Page id="page" title="{i18n>title}">
+        <customHeader>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://account" type="Transparent" press="onUserInfo"/>
+            </Toolbar>
+        </customHeader>
         <content>
             <HBox class="sapUiSmallMargin">
                 <Input id="sgvalue" placeholder="SingleValue" value="SingleValue"/>
